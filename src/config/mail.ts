@@ -1,11 +1,10 @@
 interface IMailConfig {
-  driver: 'ethereal' | 'mailChimp';
+  driver: 'ethereal' | 'ses';
 
   defaults: {
     from: {
       name: string;
       email: string;
-      password: string;
     };
   };
 }
@@ -17,7 +16,6 @@ export default {
     from: {
       name: 'Felipe',
       email: process.env.EMAIL_ADRESS,
-      password: process.env.EMAIL_PASSWORD,
     },
   },
 } as IMailConfig;

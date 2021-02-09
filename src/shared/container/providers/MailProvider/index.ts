@@ -5,11 +5,11 @@ import mailConfig from '@config/mail';
 import IMailProvider from './models/IMailProvider';
 
 import EtherealMailProvider from './implementations/EtherealMailProvider';
-import MailChimpProvider from './implementations/MailChimpProvider';
+import MailChimpProvider from './implementations/SESMailProvider';
 
 const providers = {
   ethereal: container.resolve(EtherealMailProvider),
-  mailChimp: container.resolve(MailChimpProvider),
+  ses: container.resolve(MailChimpProvider),
 };
 
 container.registerInstance<IMailProvider>(
